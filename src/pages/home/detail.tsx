@@ -1,5 +1,11 @@
+import { Stack, Text } from "@chakra-ui/react";
+
 const Detail = () => {
-  return <div>Detail</div>;
+  return (
+    <Stack bgColor="#F6F7F9" minHeight={"86vh"}>
+      <Text>Detail</Text>
+    </Stack>
+  );
 };
 
 export { Detail };
