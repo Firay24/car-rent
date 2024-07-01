@@ -39,7 +39,14 @@ const Header = () => {
             placeholder="Search something here"
           />
           <InputRightElement>
-            <PiSlidersHorizontalThin />
+            <IconButton
+              backgroundColor={"transparent"}
+              borderRadius="full"
+              aria-label="Loved"
+              icon={<PiSlidersHorizontalThin />}
+              color="secondaryDark"
+              _hover={{ bgColor: "transparent", color: "black" }}
+            />
           </InputRightElement>
         </InputGroup>
       </HStack>

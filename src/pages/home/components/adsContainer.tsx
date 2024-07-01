@@ -13,7 +13,7 @@ const AdsContainer = ({
       <Image
         src={img}
         alt="ads"
-        minWidth="600px"
+        minWidth="500px"
         maxWidth="800px"
         objectFit="cover"
         width="100%"

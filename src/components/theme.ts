@@ -11,6 +11,7 @@ const theme = extendTheme({
     primaryGray: "#131313",
     primaryDark: "#1A202C",
     secondaryDark: "#596780",
+    textSecondary: "#90A3BF",
   },
 });
 
