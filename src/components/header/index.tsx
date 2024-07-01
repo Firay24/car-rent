@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Box,
   HStack,
   IconButton,
   Input,
@@ -17,33 +18,62 @@ import { IoMdSettings } from "react-icons/io";
 const Header = () => {
   return (
     <HStack paddingX={10} paddingY={5} justifyContent="space-between">
-      <Text fontSize="24px" fontWeight="semibold" color="primaryBlue">
-        Morent
-      </Text>
-      <InputGroup width="30%">
-        <InputLeftElement pointerEvents="none">
-          <CiSearch />
-        </InputLeftElement>
-        <Input
-          borderRadius="full"
-          type="tel"
-          placeholder="Search something here"
-        />
-        <InputRightElement>
-          <PiSlidersHorizontalThin />
-        </InputRightElement>
-      </InputGroup>
-      <HStack>
-        <IconButton borderRadius="full" aria-label="Loved" icon={<FaHeart />} />
+      <HStack width="50%" justifyContent="space-between">
+        <Text fontSize="24px" fontWeight="semibold" color="primaryBlue">
+          MORENT
+        </Text>
+        <InputGroup width="70%">
+          <InputLeftElement pointerEvents="none">
+            <CiSearch />
+          </InputLeftElement>
+          <Input
+            borderRadius="full"
+            type="tel"
+            placeholder="Search something here"
+          />
+          <InputRightElement>
+            <PiSlidersHorizontalThin />
+          </InputRightElement>
+        </InputGroup>
+      </HStack>
+      <HStack gap={5}>
         <IconButton
+          backgroundColor={"transparent"}
           borderRadius="full"
           aria-label="Loved"
-          icon={<IoNotifications />}
+          border="1px"
+          borderColor="rgba(195, 212, 233, 0.5)"
+          icon={<FaHeart />}
+          color="secondaryDark"
         />
+        <Box position="relative" display="inline-block">
+          <IconButton
+            backgroundColor={"transparent"}
+            borderRadius="full"
+            aria-label="Loved"
+            border="1px"
+            borderColor="rgba(195, 212, 233, 0.5)"
+            icon={<IoNotifications />}
+            color="secondaryDark"
+          />
+          <Box
+            position="absolute"
+            top="0"
+            right="0"
+            width="10px"
+            height="10px"
+            borderRadius="full"
+            backgroundColor="#FF4423"
+          />
+        </Box>
         <IconButton
+          backgroundColor={"transparent"}
           borderRadius="full"
           aria-label="Loved"
+          border="1px"
+          borderColor="rgba(195, 212, 233, 0.5)"
           icon={<IoMdSettings />}
+          color="secondaryDark"
         />
         <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
       </HStack>

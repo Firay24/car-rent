@@ -9,6 +9,7 @@ const theme = extendTheme({
     primaryBlue: "#3563E9",
     primaryGray: "#131313",
     primaryDark: "#1A202C",
+    secondaryDark: "#596780",
   },
 });
 
