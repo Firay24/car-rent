@@ -76,7 +76,7 @@ const Home = () => {
           ))}
         </Grid>
       </Stack>
-      <HStack justifyContent="center" marginTop={5}>
+      <HStack justifyContent="center" marginTop={10}>
         <Button
           width="fit-content"
           bgColor="primaryBlue"

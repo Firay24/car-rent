@@ -2,6 +2,7 @@ import Header from "@/components/header";
 import { Stack } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
 import { routes } from "../routes";
+import Footer from "@/components/footer";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
             ))
         )}
       </Routes>
+      <Footer />
     </Stack>
   );
 };
