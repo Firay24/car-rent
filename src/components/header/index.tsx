@@ -17,7 +17,14 @@ import { IoMdSettings } from "react-icons/io";
 
 const Header = () => {
   return (
-    <HStack paddingX={10} paddingY={5} justifyContent="space-between">
+    <HStack
+      minWidth="800px"
+      maxWidth="1800px"
+      width="full"
+      paddingX={10}
+      paddingY={3}
+      justifyContent="space-between"
+    >
       <HStack width="50%" justifyContent="space-between">
         <Text fontSize="24px" fontWeight="semibold" color="primaryBlue">
           MORENT

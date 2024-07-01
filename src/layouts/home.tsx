@@ -5,7 +5,7 @@ import { routes } from "../routes";
 
 const Home = () => {
   return (
-    <Stack>
+    <Stack align="center">
       <Header />
       <Routes>
         {routes.map(
