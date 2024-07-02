@@ -1,6 +1,6 @@
 import SignIn from "./pages/auth";
 import Dashboard from "./pages/dashboard";
-import { Home, Detail } from "@/pages/home";
+import { Home, Detail, Rent } from "@/pages/home";
 
 export const routes = [
   {
@@ -28,6 +28,12 @@ export const routes = [
         name: "detail",
         path: "/detail",
         element: <Detail />,
+      },
+      {
+        icon: "",
+        name: "rent",
+        path: "/rent",
+        element: <Rent />,
       },
     ],
   },
