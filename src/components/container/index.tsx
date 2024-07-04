@@ -3,9 +3,10 @@ import { ReactNode } from "react";
 
 interface ContainerProps {
   children: ReactNode;
+  isPaddingBottom?: boolean;
 }
 
-const Container = ({ children }: ContainerProps) => {
+const Container = ({ children, isPaddingBottom = true }: ContainerProps) => {
   return (
     <Stack
       width="full"
@@ -13,7 +14,7 @@ const Container = ({ children }: ContainerProps) => {
       minHeight="87vh"
       paddingX={10}
       paddingTop={5}
-      paddingBottom={10}
+      paddingBottom={isPaddingBottom ? 10 : 4}
     >
       {children}
     </Stack>

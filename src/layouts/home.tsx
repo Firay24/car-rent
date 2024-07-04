@@ -29,7 +29,7 @@ const Home = () => {
     <FilterContext.Provider value={{ showFilter, switchIsShowFilter }}>
       <Stack align="center">
         <Header />
-        <Stack direction="row">
+        <Stack direction="row" marginTop="72px">
           <Collapse style={{ width: "20%" }} in={showFilter} animateOpacity>
             <FilterSection />
           </Collapse>

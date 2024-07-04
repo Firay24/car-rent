@@ -24,6 +24,7 @@ export const Cars = {
       previousPrice: 0,
       isLike: true,
       img: img1,
+      time: "20 July",
     },
     {
       id: 2,
@@ -36,6 +37,7 @@ export const Cars = {
       previousPrice: 100,
       isLike: false,
       img: img2,
+      time: "19 July",
     },
     {
       id: 3,
@@ -48,6 +50,7 @@ export const Cars = {
       previousPrice: 0,
       isLike: true,
       img: img3,
+      time: "18 July",
     },
     {
       id: 4,
@@ -60,6 +63,7 @@ export const Cars = {
       previousPrice: 0,
       isLike: false,
       img: img4,
+      time: "17 July",
     },
   ],
   cars: [

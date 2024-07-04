@@ -9,4 +9,5 @@ export interface CarProps {
   previousPrice: number;
   isLike: boolean;
   img: string;
+  time?: string;
 }

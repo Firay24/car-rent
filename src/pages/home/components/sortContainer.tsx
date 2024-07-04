@@ -18,7 +18,13 @@ import DatePicker from "react-datepicker";
 import { GoChevronDown } from "react-icons/go";
 import "react-datepicker/dist/react-datepicker.css";
 
-const SortContainer = ({ title }: { title: string }) => {
+const SortContainer = ({
+  title,
+  isCard = false,
+}: {
+  title: string;
+  isCard?: boolean;
+}) => {
   const inputRef: any = useRef();
   const [startDate, setStartDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
@@ -51,11 +57,11 @@ const SortContainer = ({ title }: { title: string }) => {
   }, [inputRef]);
   return (
     <Stack
-      boxShadow="sm"
       bgColor="white"
-      paddingX={10}
-      paddingY={4}
-      borderRadius={15}
+      boxShadow={!isCard ? "sm" : undefined}
+      paddingX={!isCard ? 10 : undefined}
+      paddingY={!isCard ? 4 : undefined}
+      borderRadius={!isCard ? 15 : undefined}
       width="full"
     >
       <Radio size="md" name="1">

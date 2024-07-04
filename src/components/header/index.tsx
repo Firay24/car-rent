@@ -25,80 +25,82 @@ const Header = () => {
   };
 
   return (
-    <HStack
-      minWidth="800px"
-      maxWidth="1800px"
-      width="full"
-      paddingX={10}
-      paddingY={3}
-      justifyContent="space-between"
-    >
-      <HStack width="50%" justifyContent="space-between">
-        <Text fontSize="24px" fontWeight="semibold" color="primaryBlue">
-          MORENT
-        </Text>
-        <InputGroup width="70%">
-          <InputLeftElement pointerEvents="none">
-            <CiSearch />
-          </InputLeftElement>
-          <Input
-            borderRadius="full"
-            type="tel"
-            placeholder="Search something here"
-          />
-          <InputRightElement>
-            <IconButton
-              backgroundColor={"transparent"}
+    <HStack width="full" position="fixed" bgColor="white">
+      <HStack
+        maxWidth="1800px"
+        width="full"
+        minWidth="800px"
+        paddingX={10}
+        paddingY={3}
+        justifyContent="space-between"
+      >
+        <HStack width="50%" justifyContent="space-between">
+          <Text fontSize="24px" fontWeight="semibold" color="primaryBlue">
+            MORENT
+          </Text>
+          <InputGroup width="70%">
+            <InputLeftElement pointerEvents="none">
+              <CiSearch />
+            </InputLeftElement>
+            <Input
               borderRadius="full"
-              aria-label="filter"
-              icon={<PiSlidersHorizontalThin />}
-              color="secondaryDark"
-              _hover={{ bgColor: "transparent", color: "black" }}
-              onClick={showFilter.switchIsShowFilter}
+              type="tel"
+              placeholder="Search something here"
             />
-          </InputRightElement>
-        </InputGroup>
-      </HStack>
-      <HStack gap={5}>
-        <IconButton
-          backgroundColor={"transparent"}
-          borderRadius="full"
-          aria-label="Loved"
-          border="1px"
-          borderColor="rgba(195, 212, 233, 0.5)"
-          icon={<FaHeart />}
-          color="secondaryDark"
-        />
-        <Box position="relative" display="inline-block">
+            <InputRightElement>
+              <IconButton
+                backgroundColor={"transparent"}
+                borderRadius="full"
+                aria-label="filter"
+                icon={<PiSlidersHorizontalThin />}
+                color="secondaryDark"
+                _hover={{ bgColor: "transparent", color: "black" }}
+                onClick={showFilter.switchIsShowFilter}
+              />
+            </InputRightElement>
+          </InputGroup>
+        </HStack>
+        <HStack gap={5}>
           <IconButton
             backgroundColor={"transparent"}
             borderRadius="full"
             aria-label="Loved"
             border="1px"
             borderColor="rgba(195, 212, 233, 0.5)"
-            icon={<IoNotifications />}
+            icon={<FaHeart />}
             color="secondaryDark"
           />
-          <Box
-            position="absolute"
-            top="0"
-            right="0"
-            width="10px"
-            height="10px"
+          <Box position="relative" display="inline-block">
+            <IconButton
+              backgroundColor={"transparent"}
+              borderRadius="full"
+              aria-label="Loved"
+              border="1px"
+              borderColor="rgba(195, 212, 233, 0.5)"
+              icon={<IoNotifications />}
+              color="secondaryDark"
+            />
+            <Box
+              position="absolute"
+              top="0"
+              right="0"
+              width="10px"
+              height="10px"
+              borderRadius="full"
+              backgroundColor="#FF4423"
+            />
+          </Box>
+          <IconButton
+            backgroundColor={"transparent"}
             borderRadius="full"
-            backgroundColor="#FF4423"
+            aria-label="Loved"
+            border="1px"
+            borderColor="rgba(195, 212, 233, 0.5)"
+            icon={<IoMdSettings />}
+            color="secondaryDark"
           />
-        </Box>
-        <IconButton
-          backgroundColor={"transparent"}
-          borderRadius="full"
-          aria-label="Loved"
-          border="1px"
-          borderColor="rgba(195, 212, 233, 0.5)"
-          icon={<IoMdSettings />}
-          color="secondaryDark"
-        />
-        <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
+          <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
+        </HStack>
       </HStack>
     </HStack>
   );

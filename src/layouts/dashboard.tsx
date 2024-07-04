@@ -9,7 +9,7 @@ const Dashboard = () => {
   return (
     <Stack>
       <Header />
-      <Stack direction="row">
+      <Stack direction="row" marginTop="72px">
         <Stack
           width="20%"
           position="fixed"
@@ -19,15 +19,17 @@ const Dashboard = () => {
         >
           <Sidebar />
         </Stack>
-        <Routes>
-          {routes.map(
-            ({ layout, pages }) =>
-              layout === "dashboard" &&
-              pages.map(({ path, element }) => (
-                <Route path={path} element={element} />
-              ))
-          )}
-        </Routes>
+        <Stack marginLeft="19%" width="full">
+          <Routes>
+            {routes.map(
+              ({ layout, pages }) =>
+                layout === "dashboard" &&
+                pages.map(({ path, element }) => (
+                  <Route path={path} element={element} />
+                ))
+            )}
+          </Routes>
+        </Stack>
       </Stack>
     </Stack>
   );

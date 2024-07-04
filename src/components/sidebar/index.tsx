@@ -28,8 +28,6 @@ const Sidebar = () => {
   const menu2 = [
     { label: "Settings", icon: TbSettings2 },
     { label: "Help & Center", icon: PiWarningCircle },
-    { label: "Help & Center", icon: PiWarningCircle },
-    { label: "Help & Center", icon: PiWarningCircle },
   ];
 
   return (
