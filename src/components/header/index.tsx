@@ -14,8 +14,16 @@ import { PiSlidersHorizontalThin } from "react-icons/pi";
 import { FaHeart } from "react-icons/fa";
 import { IoNotifications } from "react-icons/io5";
 import { IoMdSettings } from "react-icons/io";
+import { FilterContextProps } from "@/types/home/filter";
+import { useContext } from "react";
+import { FilterContext } from "@/layouts";
 
 const Header = () => {
+  const showFilter: FilterContextProps = useContext(FilterContext) ?? {
+    showFilter: false,
+    switchIsShowFilter: () => {},
+  };
+
   return (
     <HStack
       minWidth="800px"
@@ -42,10 +50,11 @@ const Header = () => {
             <IconButton
               backgroundColor={"transparent"}
               borderRadius="full"
-              aria-label="Loved"
+              aria-label="filter"
               icon={<PiSlidersHorizontalThin />}
               color="secondaryDark"
               _hover={{ bgColor: "transparent", color: "black" }}
+              onClick={showFilter.switchIsShowFilter}
             />
           </InputRightElement>
         </InputGroup>

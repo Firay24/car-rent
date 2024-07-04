@@ -25,7 +25,7 @@ const AdsContainer = ({
         left="5"
         display="flex"
         flexDirection="column"
-        width="50%"
+        width="70%"
         color="white"
       >
         <Text as="h2" fontWeight="semibold" fontSize="32px">

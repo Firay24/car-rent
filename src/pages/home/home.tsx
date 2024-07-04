@@ -23,14 +23,14 @@ const Home = () => {
   return (
     <Container>
       <Wrap justify="center">
-        <WrapItem minWidth="600px" maxWidth="800px" flex="1">
+        <WrapItem minWidth="500px" maxWidth="800px" flex="1">
           <AdsContainer
             img={ImgAds1}
             heading="The Best Platform for Car Rental"
             text="Ease of doing a car rental safely and reliably. Of course at a low price."
           />
         </WrapItem>
-        <WrapItem minWidth="600px" maxWidth="800px" flex="1">
+        <WrapItem minWidth="500px" maxWidth="800px" flex="1">
           <AdsContainer
             img={ImgAds2}
             heading="Easy way to rent a car at a low price"
