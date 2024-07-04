@@ -1,4 +1,20 @@
-import { Box, HStack, Icon, Stack, Switch, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  HStack,
+  Icon,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Stack,
+  Switch,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { RiHome5Fill } from "react-icons/ri";
 import { GrCar } from "react-icons/gr";
 import { useState } from "react";
@@ -11,10 +27,13 @@ import { TbSettings2 } from "react-icons/tb";
 import { PiHandbag } from "react-icons/pi";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { TbLogout2 } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const [currentMenu, setCurrentMenu] = useState("Dashboard");
   const [isChecked, setIsChecked] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
 
   const menus = [
     { label: "Dashboard", icon: RiHome5Fill },
@@ -29,6 +48,11 @@ const Sidebar = () => {
     { label: "Settings", icon: TbSettings2 },
     { label: "Help & Center", icon: PiWarningCircle },
   ];
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    navigate("/auth/sign-in");
+  };
 
   return (
     <Stack padding={3} gap={10} paddingBottom={6} bgColor="white">
@@ -114,10 +138,45 @@ const Sidebar = () => {
           </HStack>
         </Stack>
       </Stack>
-      <HStack color="textSecondary" paddingX={3}>
+      <HStack
+        color="textSecondary"
+        _hover={{ color: "primaryBlue" }}
+        paddingX={3}
+        cursor="pointer"
+        onClick={onOpen}
+      >
         <Icon as={TbLogout2} />
         <Text>Log Out</Text>
       </HStack>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Confirmation Alert</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Stack alignItems="center">
+              <Stack fontSize="150px">
+                <PiWarningCircle color="#E53E3E" />
+              </Stack>
+              <Stack gap={0} textAlign="center">
+                <Text fontSize="24px">Are you sure?</Text>
+                <Text color="secondaryDark">
+                  If you exit, you will be logged out permanently
+                </Text>
+              </Stack>
+            </Stack>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button mr={3} onClick={onClose}>
+              Cancel
+            </Button>
+            <Button colorScheme="red" onClick={handleLogout}>
+              Logout
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Stack>
   );
 };
