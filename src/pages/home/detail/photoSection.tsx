@@ -13,7 +13,7 @@ import ImgView2 from "@/assets/image/view3.png";
 import { useState } from "react";
 
 const PhotoSection = () => {
-  const [currentImg, setCurrentImg] = useState<string>("");
+  const [currentImg, setCurrentImg] = useState<string>(ImgCar);
 
   return (
     <GridItem>
@@ -66,10 +66,10 @@ const PhotoSection = () => {
               height={150}
               cursor="pointer"
               overflow="hidden"
-              borderRadius="lg"
-              border="3px solid"
-              padding={2}
-              borderColor="primaryBlue"
+              borderRadius={currentImg === ImgCar ? "lg" : "md"}
+              border={currentImg === ImgCar ? "3px solid" : undefined}
+              padding={currentImg === ImgCar ? 2 : undefined}
+              borderColor={currentImg === ImgCar ? "primaryBlue" : undefined}
               onClick={() => setCurrentImg(ImgCar)}
             >
               <Image
@@ -87,7 +87,10 @@ const PhotoSection = () => {
               cursor="pointer"
               height={150}
               overflow="hidden"
-              borderRadius="md"
+              borderRadius={currentImg === ImgView1 ? "lg" : "md"}
+              border={currentImg === ImgView1 ? "3px solid" : undefined}
+              padding={currentImg === ImgView1 ? 2 : undefined}
+              borderColor={currentImg === ImgView1 ? "primaryBlue" : undefined}
               onClick={() => setCurrentImg(ImgView1)}
             >
               <Image
@@ -104,7 +107,10 @@ const PhotoSection = () => {
               cursor="pointer"
               height={150}
               overflow="hidden"
-              borderRadius="md"
+              borderRadius={currentImg === ImgView2 ? "lg" : "md"}
+              border={currentImg === ImgView2 ? "3px solid" : undefined}
+              padding={currentImg === ImgView2 ? 2 : undefined}
+              borderColor={currentImg === ImgView2 ? "primaryBlue" : undefined}
               onClick={() => setCurrentImg(ImgView2)}
             >
               <Image
