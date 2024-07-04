@@ -10,7 +10,7 @@ const Container = ({ children }: ContainerProps) => {
     <Stack
       width="full"
       bgColor="#F6F7F9"
-      minHeight="85vh"
+      minHeight="87vh"
       paddingX={10}
       paddingTop={5}
       paddingBottom={10}

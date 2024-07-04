@@ -16,3 +16,22 @@ const theme = extendTheme({
 });
 
 export default theme;
+
+export const generateScrollbarStyle = () => {
+  return {
+    overflowY: "auto",
+    "&::-webkit-scrollbar": {
+      width: "5px",
+    },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundColor: "#ACBFF8",
+      borderRadius: "5px",
+    },
+    "&::-webkit-scrollbar-thumb:hover": {
+      backgroundColor: "#ACBFF8",
+    },
+    "&::-webkit-scrollbar-track": {
+      backgroundColor: "#E6E6E6",
+    },
+  };
+};
