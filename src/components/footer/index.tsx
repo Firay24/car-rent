@@ -1,4 +1,10 @@
-import { Divider, HStack, Stack, Text } from "@chakra-ui/react";
+import {
+  Divider,
+  HStack,
+  Stack,
+  Text,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 
 export interface MenuProps {
   title: string;
@@ -6,6 +12,9 @@ export interface MenuProps {
 }
 
 const Footer = () => {
+  const isMobile =
+    useBreakpointValue({ base: true, md: false, xl: false }) ?? false;
+
   const menus = [
     {
       title: "About",
@@ -22,8 +31,14 @@ const Footer = () => {
   ];
   return (
     <Stack bgColor="white" padding={6} width="100%">
-      <HStack justifyContent="space-between">
-        <Stack width="50%">
+      <Stack
+        justifyContent="space-between"
+        direction={!isMobile ? "row" : "column"}
+      >
+        <Stack
+          width={isMobile ? "100%" : "25%"}
+          textAlign={isMobile ? "center" : "left"}
+        >
           <Text fontSize="24px" fontWeight="semibold" color="primaryBlue">
             MORENT
           </Text>
@@ -32,7 +47,15 @@ const Footer = () => {
             business.
           </Text>
         </Stack>
-        <HStack width="50%" gap={10} justifyContent="end" marginRight={10}>
+        <Stack
+          width={isMobile ? "100%" : "50%"}
+          gap={isMobile ? 4 : 10}
+          justifyContent="end"
+          marginRight={10}
+          direction={isMobile ? "column" : "row"}
+          textAlign={isMobile ? "center" : "left"}
+          marginTop={isMobile ? 6 : undefined}
+        >
           {menus.map((menu: MenuProps) => (
             <Stack>
               <Text fontWeight="semibold">{menu.title}</Text>
@@ -43,22 +66,24 @@ const Footer = () => {
               </Stack>
             </Stack>
           ))}
-        </HStack>
-      </HStack>
+        </Stack>
+      </Stack>
       <Divider marginY={5} />
-      <HStack
+      <Stack
         justifyContent="space-between"
         fontSize="14px"
         fontWeight="semibold"
+        direction={isMobile ? "column" : "row"}
+        textAlign={isMobile ? "center" : "left"}
       >
         <Stack>
           <Text>©2022 MORENT. All rights reserved</Text>
         </Stack>
-        <HStack gap={5}>
+        <HStack gap={5} justifyContent={isMobile ? "center" : "left"}>
           <Text>Privacy & Policy</Text>
           <Text>Terms & Condition</Text>
         </HStack>
-      </HStack>
+      </Stack>
     </Stack>
   );
 };
